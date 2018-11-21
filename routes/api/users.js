@@ -2,7 +2,9 @@ const express = require("express");
 const router = express.Router();
 const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
+const keys = require("../../config/keys");
 // Load user model
 const User = require("../../models/User");
 
@@ -56,6 +58,59 @@ router.post("/register", (req, res) => {
         });
       });
     }
+  });
+});
+
+// @route   POST api/users/login
+// @desc    Login user/ Returning Token
+// @access  Public
+
+/* 
+  Finds the user by the email address. if not found. Sends 404. If user is found then compared hashed password with typed in password. If matched then return 
+*/
+router.post("/login", (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+
+  // Find user by email
+  User.findOne({
+    email
+  }).then(user => {
+    if (!user) {
+      return res.status(404).json({ email: "user not found" });
+    }
+
+    // Check password
+    bcrypt.compare(password, user.password).then(isMatch => {
+      if (isMatch) {
+        // Sign token
+        const payload = {
+          id: user.id,
+          name: user.name,
+          avatar: user.avatar
+        };
+        jwt.sign(
+          payload,
+          keys.secretOrKey,
+          {
+            expiresIn: 3600
+          },
+          (err, token) => {
+            res.json({
+              success: true,
+              token: "Bearer " + token
+            });
+          }
+        );
+
+        // res.json({
+        //   msg: "Success"
+        // });
+      } else
+        return res.status(400).json({
+          password: "Password incorrect"
+        });
+    });
   });
 });
 
