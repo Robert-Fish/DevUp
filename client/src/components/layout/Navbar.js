@@ -7,9 +7,9 @@ class NavBar extends Component {
       <Navbar className="navBar">
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#home" id="navBarTitle">
+            <Link to="/" id="navBarTitle">
               Dev/Up
-            </a>
+            </Link>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav pullRight>

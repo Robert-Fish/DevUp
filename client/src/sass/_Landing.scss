@@ -1,10 +1,51 @@
 .Landing {
+  background: #fff;
+  height: 80vh;
+  padding: 15rem;
+  margin: 50px;
   img {
     margin: 0 auto;
   }
+
+  h1 {
+    text-align: center;
+  }
   h2 {
     margin: 0 auto;
-    margin-top: 2em;
+    margin-top: 1rem;
     text-align: center;
+  }
+
+  .fas,
+  .fa-laptop-code,
+  .fa-6x {
+    color: rgb(28, 91, 214);
+    text-align: center;
+    display: block;
+    margin-top: 4rem;
+  }
+
+  .userActions {
+    display: block;
+
+    margin-top: 4rem;
+    margin-left: 38%;
+
+    .userAction {
+      text-align: center;
+      background: rgb(28, 91, 214);
+      color: #fff;
+      text-decoration: none;
+      width: 11%;
+      padding: 14px;
+      margin: 1rem;
+      border: 2px solid rgb(28, 91, 214);
+
+      &:hover {
+        background: #fff;
+        color: rgb(28, 91, 214);
+        transition: all ease-in-out 0.3s;
+      }
+    }
   }
 }

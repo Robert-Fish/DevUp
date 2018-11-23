@@ -2,6 +2,8 @@ import React, { Component } from "react";
 // Component imports
 import NavBar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
 /////
 import "./App.scss";
 
@@ -15,7 +17,11 @@ class App extends Component {
         <div className="App">
           <NavBar />
           <Switch>
-            <Route path="/" component={Landing} />
+            <div className="container">
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+            </div>
           </Switch>
         </div>
       </Router>
