@@ -7,18 +7,21 @@ class NavBar extends Component {
       <Navbar className="navBar">
         <Navbar.Header>
           <Navbar.Brand>
-            <i className="fas fa-desktop navbarIcon" />
             <a href="#home" id="navBarTitle">
-              DevUp - Start Connecting
+              Dev/Up
             </a>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav pullRight>
-          <NavItem eventKey={1} href="#" className="navItem">
-            <Link to="/register">Register</Link>
+          <NavItem eventKey={1} href="#">
+            <Link to="/register" className="navItem">
+              Register
+            </Link>
           </NavItem>
-          <NavItem eventKey={2} href="#" className="navItem">
-            Login
+          <NavItem eventKey={2} href="#">
+            <Link to="/login" className="navItem">
+              Login
+            </Link>
           </NavItem>
         </Nav>
       </Navbar>
