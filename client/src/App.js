@@ -7,11 +7,27 @@ import Register from "./components/auth/Register";
 /////
 import "./App.scss";
 
+// token helpers
+import jwt_decode from "jwt-decode";
+import setAuthToken from "./utils/setAuthToken";
+///////////
+
 import { Provider } from "react-redux";
 import store from "./store";
+import { setCurrentUser } from "./actions/authActions";
 
 // React router
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+
+// Check for token
+if (localStorage.jwtToken) {
+  // Srt auth token header auth
+  setAuthToken(localStorage.jwtToken);
+  // Decode token and gets user info
+  const decoded = jwt_decode(localStorage.jwtToken);
+  // Set user and isAuthenticated
+  store.dispatch(setCurrentUser(decoded));
+}
 
 class App extends Component {
   render() {
