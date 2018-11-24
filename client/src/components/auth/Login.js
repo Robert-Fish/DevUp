@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import classnames from "classnames";
-import axios from "axios";
 import PropTypes from "prop-types";
 
 // redux
@@ -30,6 +29,12 @@ class Login extends Component {
     };
     this.props.loginUser(userData);
   };
+
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
