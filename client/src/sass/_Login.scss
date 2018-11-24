@@ -29,6 +29,13 @@
     }
   }
 
+  .is-invalid {
+    border: 0.1rem solid red;
+  }
+  .errors {
+    color: red;
+  }
+
   input[type="submit"] {
     border: 0.1rem solid rgb(28, 91, 214);
     background: rgb(28, 91, 214);
