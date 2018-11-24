@@ -8,9 +8,14 @@ import { logoutUser } from "../../actions/authActions";
 
 class NavBar extends Component {
   onlogout(e) {
+    // console.log(this.props.history);
     e.preventDefault();
     this.props.logoutUser();
   }
+
+  componentDidMount = () => {
+    console.log(this.props.history);
+  };
 
   render() {
     const { isAuthenticated, user } = this.props.auth;
@@ -29,7 +34,11 @@ class NavBar extends Component {
     const authLinks = (
       <Fragment>
         <li className="nav-item">
-          <a href="/logout" onClick={this.onlogout.bind(this)}>
+          <a
+            href="/
+          "
+            onClick={this.onlogout.bind(this)}
+          >
             <img
               src={user.avatar}
               alt={user.name}
