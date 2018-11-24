@@ -22,16 +22,15 @@
     color: #fff;
   }
 
-  .navItem {
+  .nav-item a {
     color: #fff !important;
-    padding: 1rem;
+
     text-decoration: none;
 
     &:hover {
-      background: #fff;
-      color: rgb(23, 24, 48) !important;
+      background: #fff !important;
+      color: rgb(28, 91, 214) !important;
       transition: all ease-in-out 0.3s;
-      border-radius: 10px;
     }
   }
 }
