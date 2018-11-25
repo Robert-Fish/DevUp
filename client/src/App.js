@@ -6,6 +6,7 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Dashboard from "./components/dashboard/Dashboard";
 import PrivateRoute from "./components/common/PrivateRoute";
+import CreateProfile from "./components/createProfile/CreateProfile";
 /////
 
 import "./App.scss";
@@ -24,6 +25,7 @@ import { clearCurrentProfile } from "./actions/profileActions";
 
 // React router
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+
 ////
 
 // Check for token
@@ -59,7 +61,13 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+
             <Switch>
+              <PrivateRoute
+                exact
+                path="/create-profile"
+                component={CreateProfile}
+              />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
           </div>

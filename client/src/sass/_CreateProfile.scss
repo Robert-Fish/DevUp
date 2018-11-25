@@ -1,0 +1,40 @@
+.create-profile {
+  background: #fff;
+  height: 89vh;
+  padding: 2rem;
+  margin: 50px;
+
+  .btn-md,
+  .btn-primary .center-block {
+    background: #1c5bd6 !important;
+    border: none !important;
+    padding: 0.5rem 1rem;
+  }
+
+  small {
+    margin: 0 auto;
+  }
+
+  .form-control {
+    width: 30%;
+    margin: 1rem auto;
+  }
+
+  .bio {
+    resize: none;
+  }
+
+  .social-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    width: 30%;
+    align-items: center;
+
+    input {
+      margin-left: 1rem;
+      width: 31rem;
+    }
+  }
+}
