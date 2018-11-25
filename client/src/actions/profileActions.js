@@ -1,10 +1,5 @@
 import axios from "axios";
-import {
-  GET_ERRORS,
-  PROFILE_LOADING,
-  GET_PROFILE,
-  CLEAR_CURRENT_PROFILE
-} from "./types";
+import { PROFILE_LOADING, GET_PROFILE, CLEAR_CURRENT_PROFILE } from "./types";
 
 // Get current profile
 export const getCurrentProfile = () => dispatch => {
