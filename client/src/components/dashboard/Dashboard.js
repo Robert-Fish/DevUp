@@ -23,7 +23,31 @@ class Dashboard extends Component {
       // Check if logged in user has profile
       if (Object.keys(profile).length > 0) {
         // Has profile
-        dashboardContent = <h4>DISPLAY PROFILE</h4>;
+        dashboardContent = (
+          <div className="row">
+            <div className="col-md-6">
+              <img
+                src={user.avatar}
+                style={{
+                  borderRadius: "50%",
+                  width: "25%"
+                }}
+                alt=""
+              />
+            </div>
+            <div className="col-md-6">
+              <h2>Hi, {user.name}</h2>
+              <h3>@{profile.handle}</h3>
+              <div className="row">
+                <div className="col-md-6">
+                  <h3>Having fun at {profile.company}</h3>
+                  <h4>An {profile.status}?</h4>
+                </div>
+                <div className="col-md-6" />
+              </div>
+            </div>
+          </div>
+        );
       } else {
         // Doesn't have profile
         dashboardContent = (

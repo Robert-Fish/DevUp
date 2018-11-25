@@ -4,6 +4,14 @@
   padding: 2rem;
   margin: 50px;
 
+  .is-invalid {
+    border: 0.1rem solid red;
+  }
+  .errors {
+    color: red;
+    text-align: center;
+  }
+
   .btn-md,
   .btn-primary .center-block {
     background: #1c5bd6 !important;

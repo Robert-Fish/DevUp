@@ -3,6 +3,10 @@ import { connect } from "react-redux";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 
+import { withRouter } from "react-router-dom";
+
+import { createProfile } from "../../actions/profileActions";
+
 class CreateProfile extends Component {
   constructor(props) {
     super(props);
@@ -31,6 +35,13 @@ class CreateProfile extends Component {
     });
   };
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
+  }
   onSubmit = e => {
     e.preventDefault();
     const profileData = {
@@ -43,7 +54,7 @@ class CreateProfile extends Component {
       githubusername: this.state.githubusername,
       bio: this.state.bio
     };
-    console.log("Profile created");
+    this.props.createProfile(profileData, this.props.history);
   };
 
   showSocialMedia = () => {
@@ -165,8 +176,9 @@ class CreateProfile extends Component {
                 })}
                 info="Handle"
               />
+              <p className="errors">{errors.handle}</p>
               <input
-                placeholder="* Company"
+                placeholder="Company"
                 name="company"
                 type="text"
                 value={this.state.company}
@@ -175,6 +187,7 @@ class CreateProfile extends Component {
                   "is-invalid": errors.company
                 })}
               />
+              <p className="errors">{errors.company}</p>
               <input
                 placeholder="Location"
                 name="location"
@@ -185,6 +198,7 @@ class CreateProfile extends Component {
                   "is-invalid": errors.location
                 })}
               />
+              <p className="errors">{errors.location}</p>
               <input
                 placeholder="* Skills(Add your skills using commas)"
                 name="skills"
@@ -195,8 +209,9 @@ class CreateProfile extends Component {
                   "is-invalid": errors.skills
                 })}
               />
+              <p className="errors">{errors.skills}</p>
               <input
-                placeholder="* Website"
+                placeholder="Website"
                 name="website"
                 type="text"
                 value={this.state.website}
@@ -205,6 +220,7 @@ class CreateProfile extends Component {
                   "is-invalid": errors.website
                 })}
               />
+              <p className="errors">{errors.website}</p>
               <input
                 placeholder="* Github Username"
                 name="githubusername"
@@ -215,6 +231,7 @@ class CreateProfile extends Component {
                   "is-invalid": errors.githubusername
                 })}
               />
+              <p className="errors">{errors.githubusername}</p>
               <textarea
                 placeholder="Bio"
                 name="bio"
@@ -226,9 +243,12 @@ class CreateProfile extends Component {
                 })}
                 rows="4"
               />
+              <p className="errors">{errors.bio}</p>
               <select
                 name="status"
-                className="form-control"
+                className={classnames("form-control", {
+                  "is-invalid": errors.status
+                })}
                 onChange={this.onChange}
                 value={this.state.status}
               >
@@ -240,6 +260,7 @@ class CreateProfile extends Component {
                 <option value="software engineer">Software Engineer</option>
                 <option value="intern">Intern</option>
               </select>
+              <p className="errors">{errors.status}</p>
               <button
                 type="submit"
                 className="btn btn-info btn-md center-block"
@@ -271,4 +292,7 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps)(CreateProfile);
+export default connect(
+  mapStateToProps,
+  { createProfile }
+)(withRouter(CreateProfile));
