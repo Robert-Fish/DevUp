@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Spinner from "../common/Spinner";
 import { Link } from "react-router-dom";
+import ProfileActions from './ProfileActions';
 // Redux imports
 import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profileActions";
@@ -25,7 +26,10 @@ class Dashboard extends Component {
         // Has profile
         dashboardContent = (
           <div className="row">
-            <div className="col-md-6">
+            <p className="lead text-muted">
+              Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
+            </p>
+            {/* <div className="col-md-6">
               <img
                 src={user.avatar}
                 style={{
@@ -45,14 +49,13 @@ class Dashboard extends Component {
                 </div>
                 <div className="col-md-6" />
               </div>
-            </div>
+            </div> */}
           </div>
         );
       } else {
         // Doesn't have profile
         dashboardContent = (
           <div>
-            <p className="lead text-muted">Welcome {user.name}</p>
             <p>You have not setup a profile</p>
             <Link to="/create-profile" className="btn btn-lg btn-info">
               Create Profile
