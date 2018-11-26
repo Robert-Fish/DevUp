@@ -5,3 +5,18 @@
   padding: 8rem;
   margin: 50px;
 }
+
+.btn-light {
+  background: #f8f9fa;
+  margin: 2rem;
+  border: none;
+
+  &:hover {
+    background: rgb(28, 91, 214);
+    color: #fff;
+    transition: all ease-in-out 0.3s;
+    i {
+      color: #fff;
+    }
+  }
+}
