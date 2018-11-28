@@ -25,6 +25,8 @@ import { clearCurrentProfile } from "./actions/profileActions";
 
 // React router
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+import EditProfile from "./components/editProfile/EditProfile";
+import Profiles from "./components/profiles/Profiles";
 
 ////
 
@@ -61,14 +63,23 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-
+            <Route exact path="/profiles" component={Profiles} />
             <Switch>
               <PrivateRoute
                 exact
                 path="/create-profile"
                 component={CreateProfile}
               />
+            </Switch>
+            <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/edit-profile"
+                component={EditProfile}
+              />
             </Switch>
           </div>
         </Router>

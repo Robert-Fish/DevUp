@@ -5,9 +5,10 @@ import PropTypes from "prop-types";
 
 import { withRouter } from "react-router-dom";
 
-import { createProfile } from "../../actions/profileActions";
+import { createProfile, getCurrentProfile } from "../../actions/profileActions";
+import isEmpty from "../../validation/is-empty";
 
-class CreateProfile extends Component {
+class EditProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,6 +30,10 @@ class CreateProfile extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.getCurrentProfile();
+  }
+
   onChange = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -39,6 +44,51 @@ class CreateProfile extends Component {
     if (nextProps.errors) {
       this.setState({
         errors: nextProps.errors
+      });
+    }
+
+    if (nextProps.profile.profile) {
+      const profile = nextProps.profile.profile;
+
+      // Skills back to csv
+      const skillsCSV = profile.skills.join(",");
+
+      // Check if skills is empty else empty string
+      profile.company = !isEmpty(profile.company) ? profile.company : "";
+      profile.website = !isEmpty(profile.website) ? profile.website : "";
+      profile.location = !isEmpty(profile.location) ? profile.location : "";
+      profile.githubusername = !isEmpty(profile.githubusername)
+        ? profile.githubusername
+        : "";
+      profile.bio = !isEmpty(profile.bio) ? profile.bio : "";
+      profile.social = !isEmpty(profile.social) ? profile.social : {};
+      profile.twitter = !isEmpty(profile.social.twitter) ? profile.social : {};
+      profile.facebook = !isEmpty(profile.social.facebook)
+        ? profile.social
+        : {};
+      profile.linkedin = !isEmpty(profile.social.linkedin)
+        ? profile.social
+        : {};
+      profile.youtube = !isEmpty(profile.social.youtube) ? profile.social : {};
+      profile.instagram = !isEmpty(profile.social.instagram)
+        ? profile.social
+        : {};
+
+      // set component
+      this.setState({
+        handle: profile.handle,
+        company: profile.company,
+        website: profile.website,
+        location: profile.location,
+        status: profile.status,
+        skills: skillsCSV,
+        githubusername: profile.githubusername,
+        bio: profile.bio,
+        twitter: profile.twitter,
+        facebook: profile.facebook,
+        linkedin: profile.linkedin,
+        youtube: profile.youtube,
+        instagram: profile.instagram
       });
     }
   }
@@ -64,102 +114,13 @@ class CreateProfile extends Component {
   };
 
   render() {
-    // let socialInput;
     const { errors } = this.state;
 
-    if (this.state.displaySocialInputs === true) {
-      // socialInput = (
-      //   <Fragment>
-      //     <div className="social-input">
-      //       <div className="item">
-      //         <i className="fab fa-facebook-square fa-2x" />
-      //       </div>
-      //       <div className="item">
-      //         <input
-      //           type="text"
-      //           placeholder="Facebook"
-      //           className={classnames("form-control", {
-      //             "is-invalid": errors.facebook
-      //           })}
-      //           onChange={this.onChange}
-      //           value={this.state.facebook}
-      //         />
-      //       </div>
-      //     </div>
-      //     <div className="social-input">
-      //       <div className="item">
-      //         <i className="fab fa-twitter-square fa-2x" />
-      //       </div>
-      //       <div className="item">
-      //         <input
-      //           type="text"
-      //           placeholder="Twitter"
-      //           className={classnames("form-control", {
-      //             "is-invalid": errors.twitter
-      //           })}
-      //           onChange={this.onChange}
-      //           value={this.state.twitter}
-      //         />
-      //       </div>
-      //     </div>
-      //     <div className="social-input">
-      //       <div className="item">
-      //         <i className="fab fa-linkedin fa-2x" />
-      //       </div>
-      //       <div className="item">
-      //         <input
-      //           type="text"
-      //           placeholder="LinkedIn"
-      //           className={classnames("form-control", {
-      //             "is-invalid": errors.linkedin
-      //           })}
-      //           onChange={this.onChange}
-      //           value={this.state.linkedin}
-      //         />
-      //       </div>
-      //     </div>
-      //     <div className="social-input">
-      //       <div className="item">
-      //         <i className="fab fa-youtube-square fa-2x" />
-      //       </div>
-      //       <div className="item">
-      //         <input
-      //           type="text"
-      //           placeholder="Youtube"
-      //           className={classnames("form-control", {
-      //             "is-invalid": errors.youtube
-      //           })}
-      //           onChange={this.onChange}
-      //           value={this.state.youtube}
-      //         />
-      //       </div>
-      //     </div>
-      //     <div className="social-input">
-      //       <div className="item">
-      //         <i className="fab fa-instagram fa-2x" />
-      //       </div>
-      //       <div className="item">
-      //         <input
-      //           type="text"
-      //           placeholder="Instagram"
-      //           className={classnames("form-control", {
-      //             "is-invalid": errors.instagram
-      //           })}
-      //           onChange={this.onChange}
-      //           value={this.state.instagram}
-      //         />
-      //       </div>
-      //     </div>
-      //   </Fragment>
-      // );
-    } else {
-      // socialInput = null;
-    }
     return (
       <div className="create-profile">
         <div className="row">
           <div className="col-md-12 m-auto">
-            <h1 className="display-4 text-center">Create Your Profile</h1>
+            <h1 className="display-4 text-center">Edit Profile</h1>
             <p className="lead text-center">Let's get to know each other</p>
             <small className="d-block pb-3 text-center center-block">
               * = required
@@ -265,16 +226,9 @@ class CreateProfile extends Component {
                 type="submit"
                 className="btn btn-info btn-md center-block"
               >
-                Create Profile
+                Update Profile
               </button>
             </form>
-            {/* <button
-              onClick={this.showSocialMedia}
-              className="btn-md btn-primary center-block"
-            >
-              Add Social Media
-            </button>
-            {socialInput} */}
           </div>
         </div>
       </div>
@@ -282,9 +236,11 @@ class CreateProfile extends Component {
   }
 }
 
-CreateProfile.propTypes = {
+EditProfile.propTypes = {
   profile: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
+  errors: PropTypes.object.isRequired,
+  createProfile: PropTypes.func.isRequired,
+  getCurrentProfile: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -294,5 +250,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { createProfile }
-)(withRouter(CreateProfile));
+  { createProfile, getCurrentProfile }
+)(withRouter(EditProfile));

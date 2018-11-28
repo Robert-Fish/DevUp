@@ -34,6 +34,9 @@ class NavBar extends Component {
     const authLinks = (
       <Fragment>
         <li className="nav-item">
+          <Link to="/dashboard">Dashboard</Link>
+        </li>
+        <li className="nav-item">
           <a
             href="/
           "
