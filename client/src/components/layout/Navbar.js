@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -73,9 +73,7 @@ class NavBar extends Component {
             </Link>
           </Navbar.Brand>
         </Navbar.Header>
-        <Nav pullRight activeKey="">
-          {isAuthenticated ? authLinks : guestLinks}
-        </Nav>
+        <Nav pullRight>{isAuthenticated ? authLinks : guestLinks}</Nav>
       </Navbar>
     );
   }

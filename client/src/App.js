@@ -28,6 +28,7 @@ import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import EditProfile from "./components/editProfile/EditProfile";
 import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profile/Profile";
+import NotFound from "./components/not-found/NotFound";
 
 ////
 
@@ -83,6 +84,7 @@ class App extends Component {
                 component={EditProfile}
               />
             </Switch>
+            <Route exact path="/not-found" component={NotFound} />
           </div>
         </Router>
       </Provider>

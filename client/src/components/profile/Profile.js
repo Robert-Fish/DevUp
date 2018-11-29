@@ -6,12 +6,18 @@ import { Link } from "react-router-dom";
 import { getProfileByHandle } from "../../actions/profileActions";
 import ProfileHeader from "./ProfileHeader";
 import ProfileAbout from "./ProfileAbout";
-import ProfileCreds from "./ProfileCreds";
+// import ProfileCreds from "./ProfileCreds";
 import ProfileGithub from "./ProfileGithub";
 class Profile extends Component {
   componentDidMount() {
     if (this.props.match.params.handle) {
       this.props.getProfileByHandle(this.props.match.params.handle);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.profile.profile === null && this.props.profile.loading) {
+      this.props.history.push("/not-found");
     }
   }
   render() {
@@ -36,7 +42,9 @@ class Profile extends Component {
           </div>
           <ProfileHeader profile={profile} />
           <ProfileAbout profile={profile} />
-          <ProfileGithub />
+          {profile.githubusername ? (
+            <ProfileGithub username={profile.githubusername} />
+          ) : null}
         </div>
       );
     }
