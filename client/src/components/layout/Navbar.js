@@ -37,6 +37,9 @@ class NavBar extends Component {
     const authLinks = (
       <div className="nav">
         <li className="nav-item">
+          <Link to="/feed">Feed</Link>
+        </li>
+        <li className="nav-item">
           <Link to="/profiles">Profiles</Link>
         </li>
         <li className="nav-item">
