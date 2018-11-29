@@ -47,3 +47,18 @@ body {
   color: red;
   text-align: center;
 }
+
+.text-view {
+  color: #1c5bd6;
+}
+
+.btn-feed {
+  background: #fff;
+  color: #1c5bd6;
+
+  &:hover {
+    border: 1px solid #ffff;
+    background: #1c5bd6;
+    color: #fff;
+  }
+}
