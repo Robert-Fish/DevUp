@@ -21,18 +21,24 @@ class NavBar extends Component {
     const { isAuthenticated, user } = this.props.auth;
 
     const guestLinks = (
-      <Fragment>
+      <div className="nav">
+        <li className="nav-item">
+          <Link to="/profiles">Profiles</Link>
+        </li>
         <li className="nav-item">
           <Link to="/register">Register</Link>
         </li>
         <li className="nav-item">
           <Link to="/login">Login</Link>
         </li>
-      </Fragment>
+      </div>
     );
 
     const authLinks = (
-      <Fragment>
+      <div className="nav">
+        <li className="nav-item">
+          <Link to="/profiles">Profiles</Link>
+        </li>
         <li className="nav-item">
           <Link to="/dashboard">Dashboard</Link>
         </li>
@@ -56,7 +62,7 @@ class NavBar extends Component {
             Logout
           </a>
         </li>
-      </Fragment>
+      </div>
     );
     return (
       <Navbar className="navBar">

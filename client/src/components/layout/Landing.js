@@ -23,10 +23,10 @@ class Landing extends Component {
         </h2>
         <i className="fas fa-laptop-code fa-6x" />
         <div className="userActions">
-          <Link to="/register" className="userAction">
+          <Link to="/login" className="userAction">
             Login
           </Link>
-          <Link to="/login" className="userAction">
+          <Link to="/register" className="userAction">
             Register
           </Link>
         </div>
