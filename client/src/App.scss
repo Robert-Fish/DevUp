@@ -6,6 +6,32 @@
 @import "./sass/Dashboard";
 @import "./sass/CreateProfile";
 .App {
-  background: rgb(242, 244, 249);
+  background: #1c5bd6;
   height: 100vh;
+}
+
+.profiles {
+  background: #1c5bd6;
+}
+
+.btn-profile-back {
+  background: #fff;
+  color: #1c5bd6;
+
+  &:hover {
+    border: 1px solid #fff;
+    background: #1c5bd6;
+    color: #fff;
+  }
+}
+
+.btn-view {
+  background: #1c5bd6;
+  color: #fff;
+
+  &:hover {
+    border: 1px solid #1c5bd6;
+    background: #fff;
+    color: #1c5bd6;
+  }
 }

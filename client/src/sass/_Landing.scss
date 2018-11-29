@@ -27,11 +27,11 @@
   }
 
   .userActions {
-    display: block;
-
+    display: flex;
+    justify-content: center;
     margin-top: 4rem;
-    margin-left: 38%;
-
+    flex-direction: column;
+    align-items: center;
     .userAction {
       text-align: center;
       background: rgb(28, 91, 214);

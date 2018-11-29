@@ -35,11 +35,7 @@ class Dashboard extends Component {
             </p>
             <ProfileActions />
             {/* TODO exp and education */}
-            <div
-              style={{
-                marginBottom: "60px"
-              }}
-            >
+            <div className="col-md-12">
               <button onClick={this.onDeleteClick} className="btn btn-danger">
                 Delete My Account
               </button>
@@ -72,7 +68,7 @@ class Dashboard extends Component {
         dashboardContent = (
           <div>
             <p>You have not setup a profile</p>
-            <Link to="/create-profile" className="btn btn-lg btn-info">
+            <Link to="/create-profile" className="btn btn-lg btn-view">
               Create Profile
             </Link>
           </div>

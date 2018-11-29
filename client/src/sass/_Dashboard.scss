@@ -8,15 +8,19 @@
 
 .btn-light {
   background: #f8f9fa;
-  margin: 2rem;
+  margin: 0 2rem !important;
   border: none;
 
   &:hover {
-    background: rgb(28, 91, 214);
+    background: #1c5bd6;
     color: #fff;
     transition: all ease-in-out 0.3s;
     i {
       color: #fff;
     }
   }
+}
+
+.bg-now {
+  background: rgb(28, 91, 214);
 }

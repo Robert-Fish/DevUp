@@ -21,7 +21,7 @@ class Landing extends Component {
           A place to connnect with others, down the road or the across the
           ocean.
         </h2>
-        <i className="fas fa-laptop-code fa-6x" />
+
         <div className="userActions">
           <Link to="/login" className="userAction">
             Login

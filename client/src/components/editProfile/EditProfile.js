@@ -137,6 +137,9 @@ class EditProfile extends Component {
                 })}
                 info="Handle"
               />
+              <small id="handleHelp" class="form-text text-muted text-center">
+                Your handle across our social network
+              </small>
               <p className="errors">{errors.handle}</p>
               <input
                 placeholder="Company"
@@ -148,6 +151,9 @@ class EditProfile extends Component {
                   "is-invalid": errors.company
                 })}
               />
+              <small id="companyHelp" class="form-text text-muted text-center">
+                Where you work
+              </small>
               <p className="errors">{errors.company}</p>
               <input
                 placeholder="Location"
@@ -159,6 +165,9 @@ class EditProfile extends Component {
                   "is-invalid": errors.location
                 })}
               />
+              <small id="locationHelp" class="form-text text-muted text-center">
+                Where are you located
+              </small>
               <p className="errors">{errors.location}</p>
               <input
                 placeholder="* Skills(Add your skills using commas)"
@@ -170,6 +179,9 @@ class EditProfile extends Component {
                   "is-invalid": errors.skills
                 })}
               />
+              <small id="skillHelp" class="form-text text-muted text-center">
+                What are you skilled at
+              </small>
               <p className="errors">{errors.skills}</p>
               <input
                 placeholder="Website"
@@ -181,6 +193,9 @@ class EditProfile extends Component {
                   "is-invalid": errors.website
                 })}
               />
+              <small id="locationHelp" class="form-text text-muted text-center">
+                Do you have a website?
+              </small>
               <p className="errors">{errors.website}</p>
               <input
                 placeholder="* Github Username"
@@ -192,6 +207,9 @@ class EditProfile extends Component {
                   "is-invalid": errors.githubusername
                 })}
               />
+              <small id="locationHelp" class="form-text text-muted text-center">
+                Github UserName
+              </small>
               <p className="errors">{errors.githubusername}</p>
               <textarea
                 placeholder="Bio"
@@ -204,6 +222,9 @@ class EditProfile extends Component {
                 })}
                 rows="4"
               />
+              <small id="locationHelp" class="form-text text-muted text-center">
+                Tell us about yourself
+              </small>
               <p className="errors">{errors.bio}</p>
               <select
                 name="status"
@@ -214,18 +235,15 @@ class EditProfile extends Component {
                 value={this.state.status}
               >
                 <option value="0">--Select Your Status--</option>
-                <option value="web developer">Web Developer</option>
-                <option value="tutor">Tutor</option>
-                <option value="student">Student</option>
+                <option value="Web developer">Web Developer</option>
+                <option value="Tutor">Tutor</option>
+                <option value="Student">Student</option>
                 <option value="mivo">Mivo</option>
-                <option value="software engineer">Software Engineer</option>
-                <option value="intern">Intern</option>
+                <option value="Software Engineer">Software Engineer</option>
+                <option value="Intern">Intern</option>
               </select>
               <p className="errors">{errors.status}</p>
-              <button
-                type="submit"
-                className="btn btn-info btn-md center-block"
-              >
+              <button type="submit" className="btn btn-info btn-md btn-block">
                 Update Profile
               </button>
             </form>

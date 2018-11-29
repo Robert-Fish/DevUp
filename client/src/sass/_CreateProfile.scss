@@ -1,7 +1,7 @@
 .create-profile {
   background: #fff;
-  height: 89vh;
-  padding: 2rem;
+  height: 95vh;
+  padding: 0.5rem;
   margin: 50px;
 
   .is-invalid {
@@ -17,6 +17,10 @@
     background: #1c5bd6 !important;
     border: none !important;
     padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
   }
 
   small {

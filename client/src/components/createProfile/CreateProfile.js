@@ -176,6 +176,7 @@ class CreateProfile extends Component {
                 })}
                 info="Handle"
               />
+
               <p className="errors">{errors.handle}</p>
               <input
                 placeholder="Company"
