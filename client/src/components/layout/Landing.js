@@ -15,18 +15,17 @@ class Landing extends Component {
 
   render() {
     return (
-      <div className="Landing">
-        <h1>Dev Up</h1>
-        <h2>
+      <div className="container landing">
+        <h1 className="display-4">Dev Up</h1>
+        <p className="lead text-center ">
           A place to connnect with others, down the road or the across the
           ocean.
-        </h2>
-
-        <div className="userActions">
-          <Link to="/login" className="userAction">
+        </p>
+        <div>
+          <Link to="/login" className="btn btn-light btn-lg btn-block">
             Login
           </Link>
-          <Link to="/register" className="userAction">
+          <Link to="/register" className="btn btn-light btn-lg btn-block">
             Register
           </Link>
         </div>

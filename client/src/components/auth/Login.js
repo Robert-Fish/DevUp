@@ -51,7 +51,7 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="Login">
+      <div className="container login">
         <h1>Login</h1>
         <form noValidate onSubmit={this.onSubmit}>
           <input
@@ -76,7 +76,7 @@ class Login extends Component {
             })}
           />
           <p className="errors">{errors.password}</p>
-          <input type="submit" className="btn btn-info btn-block mt-4" />
+          <input type="submit" className="btn btn-info btn-block mt-4 " />
         </form>
       </div>
     );

@@ -1,3 +1,14 @@
+.navbar .navbar-expand-sm .navbar-devup .mb-4 {
+  background: #1c5bd6;
+}
+
+.nav-link {
+  color: #fff;
+}
+
+.navbar-brand {
+  color: #fff;
+}
 .navBar {
   background: rgb(28, 91, 214);
   border: none;
@@ -30,7 +41,7 @@
 
     &:hover {
       background: #fff !important;
-      color: rgb(28, 91, 214) !important;
+      color: #1c5bd6 !important;
       transition: all ease-in-out 0.3s;
     }
   }

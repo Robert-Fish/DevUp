@@ -58,7 +58,7 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="Register">
+      <div className="container register">
         <h1>Register</h1>
         <form noValidate onSubmit={this.onSubmit}>
           <input
