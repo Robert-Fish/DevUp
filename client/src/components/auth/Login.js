@@ -53,7 +53,11 @@ class Login extends Component {
     return (
       <div className="container login">
         <h1>Login</h1>
-        <form noValidate onSubmit={this.onSubmit}>
+        <form
+          noValidate
+          onSubmit={this.onSubmit}
+          className="justify-content-center"
+        >
           <input
             placeholder="Email"
             name="email"
@@ -76,7 +80,7 @@ class Login extends Component {
             })}
           />
           <p className="errors">{errors.password}</p>
-          <input type="submit" className="btn btn-info btn-block mt-4 " />
+          <input type="submit" className="btn btn-info mt-4" />
         </form>
       </div>
     );

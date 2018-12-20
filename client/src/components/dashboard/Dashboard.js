@@ -30,7 +30,7 @@ class Dashboard extends Component {
         // Has profile
         dashboardContent = (
           <div className="row">
-            <p className="lead text-muted">
+            <p className="lead text-muted text-center">
               Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
             </p>
             <ProfileActions />
@@ -79,7 +79,7 @@ class Dashboard extends Component {
       <div className="dashboard">
         <div className="row">
           <div className="col-md-12">
-            <h1 className="display-4">Dashboard</h1>
+            <h1 className="display-4 text-center">Dashboard</h1>
             {dashboardContent}
           </div>
         </div>

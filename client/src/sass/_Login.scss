@@ -36,6 +36,8 @@
   input[type="submit"] {
     border: 0.1rem solid rgb(28, 91, 214);
     background: rgb(28, 91, 214);
+    margin: 0 auto;
+    display: block;
 
     &:hover {
       background: #fff;
