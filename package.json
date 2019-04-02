@@ -11,6 +11,9 @@
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --skip-integrity-check --prefix client "
   },
+  "engines": {
+    "node": "8.11.4"
+  },
   "author": "Robert Fish",
   "license": "MIT",
   "dependencies": {
