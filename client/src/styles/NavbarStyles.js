@@ -63,3 +63,7 @@ export const RegisterLink = styled(Link)`
 export const LoginLink = styled(RegisterLink)``;
 
 export const ContributeLabel = styled(RegisterHint)``;
+
+export const LogoutLink = styled(RegisterLink)``;
+export const FeedLink = styled(RegisterLink)``;
+export const DashboardLink = styled(RegisterLink)``;

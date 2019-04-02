@@ -13,7 +13,10 @@ import {
   RegisterHint,
   ContributeLabel,
   RegisterLink,
-  LoginLink
+  LoginLink,
+  FeedLink,
+  DashboardLink,
+  LogoutLink
 } from "../../styles/NavbarStyles";
 class Navbar extends Component {
   onLogoutClick(e) {
@@ -31,7 +34,9 @@ class Navbar extends Component {
           <Logo>DevUp</Logo>
         </NavLeft>
         <NavRight>
-          <p>Logout</p>
+          <FeedLink to="/feed">Feed</FeedLink>
+          <DashboardLink to="/dashboard">Dashboard</DashboardLink>
+          <LogoutLink to="/logout">Logout</LogoutLink>
         </NavRight>
       </Fragment>
     );
