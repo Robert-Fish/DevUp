@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import PostForm from "./PostForm";
-import Spinner from "../common/Spinner";
-import { getPosts } from "../../actions/postActions";
-import PostFeed from "./PostFeed";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import PostForm from './PostForm';
+import Spinner from '../common/Spinner';
+import { getPosts } from '../../actions/postActions';
+import PostFeed from './PostFeed';
 class Posts extends Component {
   componentDidMount() {
     this.props.getPosts();
@@ -33,10 +33,6 @@ class Posts extends Component {
     );
   }
 }
-Posts.PropTypes = {
-  posts: PropTypes.object.isRequired,
-  getPosts: PropTypes.func.isRequired
-};
 
 const mapStateToProps = state => ({
   post: state.post
