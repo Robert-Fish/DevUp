@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import isEmpty from "../../validation/is-empty";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import isEmpty from '../../validation/is-empty';
 
 class ProfileAbout extends Component {
   render() {
     const { profile } = this.props;
 
     // Get first name
-    const firstName = profile.user.name.trim().split(" ")[0];
+    const firstName = profile.user.name.trim().split(' ')[0];
 
     // Skill List
     const skills = profile.skills.map((skill, index) => (
@@ -35,7 +35,7 @@ class ProfileAbout extends Component {
             <div className="row">
               <div
                 className="d-flex flex-wrap justify-content-center align-items-center"
-                style={{ margin: "0 auto" }}
+                style={{ margin: '0 auto' }}
               >
                 {skills}
               </div>
@@ -47,7 +47,4 @@ class ProfileAbout extends Component {
   }
 }
 
-ProfileAbout.PropTypes = {
-  profile: PropTypes.object.isRequired
-};
 export default ProfileAbout;
