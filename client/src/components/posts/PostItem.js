@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import classnames from "classnames";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import { deletePost, addLike, removeLike } from "../../actions/postActions";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { deletePost, addLike, removeLike } from '../../actions/postActions';
 
 class PostItem extends Component {
   onDeleteClick(id) {
@@ -42,10 +42,21 @@ class PostItem extends Component {
               />
             </a>
             <br />
-            <p className="text-center">{post.name}</p>
+            <p
+              className="text-center"
+              style={{
+                textTransform: 'capitalize',
+
+                width: '12.5rem'
+              }}
+            >
+              {post.name}
+            </p>
           </div>
           <div className="col-md-10">
-            <p className="lead">{post.text}</p>
+            <p className="lead" style={{ marginLeft: '2rem' }}>
+              {post.text}
+            </p>
             {showActions ? (
               <span>
                 <button
@@ -54,8 +65,8 @@ class PostItem extends Component {
                   className="btn btn-light mr-1"
                 >
                   <i
-                    className={classnames("fas fa-thumbs-up", {
-                      "text-view": this.findUserLike(post.likes)
+                    className={classnames('fas fa-thumbs-up', {
+                      'text-view': this.findUserLike(post.likes)
                     })}
                   />
                   <span className="badge badge-light">{post.likes.length}</span>

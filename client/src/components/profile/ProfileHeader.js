@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import isEmpty from "../../validation/is-empty";
+import React, { Component } from 'react';
+import isEmpty from '../../validation/is-empty';
 class ProfileHeader extends Component {
   render() {
     const { profile } = this.props;
@@ -15,17 +15,20 @@ class ProfileHeader extends Component {
                   src={profile.user.avatar}
                   alt=""
                   style={{
-                    marginLeft: "1rem"
+                    marginLeft: '1rem'
                   }}
                 />
               </div>
             </div>
             <div className="text-center">
-              <h1 className="display-4 text-center text-dark">
+              <h1
+                className="display-4 text-center text-dark"
+                style={{ textTransform: 'capitalize' }}
+              >
                 {profile.user.name}
               </h1>
               <p className="lead text-center text-dark">
-                {profile.status}{" "}
+                {profile.status}{' '}
                 {isEmpty(profile.company) ? null : (
                   <span>at {profile.company}</span>
                 )}

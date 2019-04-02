@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import isEmpty from "../../validation/is-empty";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import isEmpty from '../../validation/is-empty';
 
 class ProfileItem extends Component {
   render() {
@@ -15,11 +15,11 @@ class ProfileItem extends Component {
           </div>
           <div
             className="col-lg-5 col-md-5 col-sm-12 text-center"
-            style={{ marginLeft: "2rem" }}
+            style={{ marginLeft: '2rem' }}
           >
-            <h3>{profile.user.name}</h3>
+            <h3 style={{ textTransform: 'capitalize' }}>{profile.user.name}</h3>
             <p>
-              {profile.status}{" "}
+              {profile.status}{' '}
               {isEmpty(profile.company) ? null : (
                 <span>at {profile.company}</span>
               )}

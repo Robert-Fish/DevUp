@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { logoutUser } from "../../actions/authActions";
-import { clearCurrentProfile } from "../../actions/profileActions";
+import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { logoutUser } from '../../actions/authActions';
+import { clearCurrentProfile } from '../../actions/profileActions';
 import {
   NavBarContainer,
   NavLeft,
@@ -17,7 +17,7 @@ import {
   FeedLink,
   DashboardLink,
   LogoutLink
-} from "../../styles/NavbarStyles";
+} from '../../styles/NavbarStyles';
 class Navbar extends Component {
   onLogoutClick(e) {
     e.preventDefault();
@@ -36,7 +36,9 @@ class Navbar extends Component {
         <NavRight>
           <FeedLink to="/feed">Feed</FeedLink>
           <DashboardLink to="/dashboard">Dashboard</DashboardLink>
-          <LogoutLink to="/logout">Logout</LogoutLink>
+          <LogoutLink to="#" onClick={() => this.props.logoutUser()}>
+            Logout
+          </LogoutLink>
         </NavRight>
       </Fragment>
     );
