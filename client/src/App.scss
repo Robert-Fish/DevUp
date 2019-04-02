@@ -8,7 +8,7 @@
 .App {
   background: #1c5bd6;
   height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 body {
@@ -66,4 +66,5 @@ body {
 
 .feed {
   margin-top: 4vh;
+  height: 100vh;
 }
