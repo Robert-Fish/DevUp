@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class ProfileGithub extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      clientID: "666c0f1df74a50b66ce6",
-      clientSecret: "640329fe7052df97e0942d7960e4299895cedd50",
+      clientID: '666c0f1df74a50b66ce6',
+      clientSecret: '640329fe7052df97e0942d7960e4299895cedd50',
       count: 5,
-      sort: "created: asc",
+      sort: 'created: asc',
       repos: []
     };
   }
@@ -67,7 +67,4 @@ class ProfileGithub extends Component {
   }
 }
 
-ProfileGithub.PropTypes = {
-  username: PropTypes.string.isRequired
-};
 export default ProfileGithub;
