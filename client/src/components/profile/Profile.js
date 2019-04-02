@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import Spinner from "../common/Spinner";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import { getProfileByHandle } from "../../actions/profileActions";
-import ProfileHeader from "./ProfileHeader";
-import ProfileAbout from "./ProfileAbout";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Spinner from '../common/Spinner';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { getProfileByHandle } from '../../actions/profileActions';
+import ProfileHeader from './ProfileHeader';
+import ProfileAbout from './ProfileAbout';
 // import ProfileCreds from "./ProfileCreds";
-import ProfileGithub from "./ProfileGithub";
+import ProfileGithub from './ProfileGithub';
 class Profile extends Component {
   componentDidMount() {
     if (this.props.match.params.handle) {
@@ -17,7 +17,7 @@ class Profile extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.profile.profile === null && this.props.profile.loading) {
-      this.props.history.push("/not-found");
+      this.props.history.push('/not-found');
     }
   }
   render() {
@@ -33,7 +33,7 @@ class Profile extends Component {
             <div className="col-md-6">
               <Link
                 to="/profiles"
-                className="btn btn-profile-back mb-3 float-left"
+                className="btn btn-profile-back mb-3 float-left mt-4"
               >
                 Back to Profiles
               </Link>

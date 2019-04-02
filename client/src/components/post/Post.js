@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import Spinner from "../common/Spinner";
-import { getPost } from "../../actions/postActions";
-import PostItem from "../posts/PostItem";
-import { Link } from "react-router-dom";
-import CommentForm from "./CommentForm";
-import CommentFeed from "./CommentFeed";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import Spinner from '../common/Spinner';
+import { getPost } from '../../actions/postActions';
+import PostItem from '../posts/PostItem';
+import { Link } from 'react-router-dom';
+import CommentForm from './CommentForm';
+import CommentFeed from './CommentFeed';
 class Post extends Component {
   componentDidMount() {
     this.props.getPost(this.props.match.params.id);
@@ -32,7 +32,7 @@ class Post extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <Link to="/feed" className="btn btn-feed mb-3">
+              <Link to="/feed" className="btn btn-feed mb-3 mt-4">
                 Back To Feed
               </Link>
               {postContent}

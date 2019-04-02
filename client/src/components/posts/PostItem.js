@@ -4,8 +4,12 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { deletePost, addLike, removeLike } from '../../actions/postActions';
+import { getProfiles } from '../../actions/profileActions';
 
 class PostItem extends Component {
+  componentDidMount = () => {
+    this.props.getProfiles();
+  };
   onDeleteClick(id) {
     this.props.deletePost(id);
   }
@@ -28,19 +32,21 @@ class PostItem extends Component {
   }
 
   render() {
-    const { post, auth, showActions } = this.props;
+    const { post, auth, showActions, profile } = this.props;
+
+    console.log(this.props);
 
     return (
       <div className="card card-body mb-3">
         <div className="row">
           <div className="col-md-2">
-            <a href="profile.html">
-              <img
-                className="rounded-circle d-none d-md-block"
-                src={post.avatar}
-                alt=""
-              />
-            </a>
+            {/* <Link to={`/profile/${profile.handle}`}> */}
+            <img
+              className="rounded-circle d-none d-md-block"
+              src={post.avatar}
+              alt=""
+            />
+            {/* </Link> */}
             <br />
             <p
               className="text-center"
@@ -112,9 +118,10 @@ PostItem.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  profile: state.profile.profile
 });
 export default connect(
   mapStateToProps,
-  { deletePost, addLike, removeLike }
+  { deletePost, addLike, removeLike, getProfiles }
 )(PostItem);

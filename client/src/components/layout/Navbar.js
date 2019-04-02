@@ -34,6 +34,7 @@ class Navbar extends Component {
           <Logo>DevUp</Logo>
         </NavLeft>
         <NavRight>
+          <FeedLink to="/profiles">Profiles</FeedLink>
           <FeedLink to="/feed">Feed</FeedLink>
           <DashboardLink to="/dashboard">Dashboard</DashboardLink>
           <LogoutLink to="#" onClick={() => this.props.logoutUser()}>
