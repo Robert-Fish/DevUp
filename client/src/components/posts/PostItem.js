@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { deletePost, addLike, removeLike } from '../../actions/postActions';
 import { getProfiles } from '../../actions/profileActions';
-
+import Moment from 'react-moment';
 class PostItem extends Component {
   componentDidMount = () => {
     this.props.getProfiles();
@@ -32,9 +32,7 @@ class PostItem extends Component {
   }
 
   render() {
-    const { post, auth, showActions, profile } = this.props;
-
-    console.log(this.props);
+    const { post, auth, showActions } = this.props;
 
     return (
       <div className="card card-body mb-3">
@@ -57,6 +55,14 @@ class PostItem extends Component {
               }}
             >
               {post.name}
+            </p>
+            <p
+              className="text-center"
+              style={{
+                width: '12.5rem'
+              }}
+            >
+              <Moment fromNow>{post.date}</Moment>{' '}
             </p>
           </div>
           <div className="col-md-10">

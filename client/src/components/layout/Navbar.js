@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
@@ -8,10 +7,7 @@ import {
   NavBarContainer,
   NavLeft,
   Logo,
-  SearchBar,
   NavRight,
-  RegisterHint,
-  ContributeLabel,
   RegisterLink,
   LoginLink,
   FeedLink,
@@ -26,7 +22,7 @@ class Navbar extends Component {
   }
 
   render() {
-    const { isAuthenticated, user } = this.props.auth;
+    const { isAuthenticated } = this.props.auth;
 
     const authLinks = (
       <Fragment>

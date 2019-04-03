@@ -31,6 +31,7 @@ import Profile from './components/profile/Profile';
 import NotFound from './components/not-found/NotFound';
 import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
+import Requestfeature from './components/feature-request/Requestfeature';
 
 ////
 
@@ -67,6 +68,7 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/profiles" component={Profiles} />
+            {/* <Route exact path="/feature-request" component={Requestfeature} /> */}
             <Route exact path="/profile/:handle" component={Profile} />
             <Switch>
               <PrivateRoute
