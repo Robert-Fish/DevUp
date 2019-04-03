@@ -4,7 +4,7 @@
 
   h1 {
     text-align: center;
-    font-family: "Roboto Mono", monospace;
+    font-family: 'Roboto Mono', monospace;
   }
   form {
     margin: 0 auto;
@@ -31,13 +31,13 @@
     color: red;
   }
 
-  input[type="submit"] {
-    border: 0.1rem solid rgb(28, 91, 214);
-    background: rgb(28, 91, 214);
+  input[type='submit'] {
+    border: 0.1rem solid#14ABBD;
+    background: #14abbd;
 
     &:hover {
       background: #fff;
-      color: rgb(28, 91, 214);
+      color: #14abbd;
       transition: all ease-in-out 0.3s;
     }
   }

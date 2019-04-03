@@ -4,18 +4,17 @@
   margin-top: 10vh;
   padding: 2rem;
 
-  -webkit-box-shadow: 10px 10px 57px -13px rgba(0,0,0,0.76);
--moz-box-shadow: 10px 10px 57px -13px rgba(0,0,0,0.76);
-box-shadow: 10px 10px 57px -13px rgba(0,0,0,0.76);
-
+  -webkit-box-shadow: 10px 10px 57px -13px rgba(0, 0, 0, 0.76);
+  -moz-box-shadow: 10px 10px 57px -13px rgba(0, 0, 0, 0.76);
+  box-shadow: 10px 10px 57px -13px rgba(0, 0, 0, 0.76);
 
   h1 {
     text-align: center;
-    font-family:"Oxygen", sans-serif;
+    font-family: 'Oxygen', sans-serif;
   }
   form {
     display: block;
-    margin-top: 5rem; 
+    margin-top: 5rem;
   }
 
   input {
@@ -42,15 +41,15 @@ box-shadow: 10px 10px 57px -13px rgba(0,0,0,0.76);
     color: red;
   }
 
-  input[type="submit"] {
-    border: 0.1rem solid rgb(28, 91, 214);
-    background: rgb(28, 91, 214);
+  input[type='submit'] {
+    border: 0.1rem solid #14abbd;
+    background: #14abbd;
     margin: 0 auto;
     display: block;
 
     &:hover {
       background: #fff;
-      color: rgb(28, 91, 214);
+      color: #14abbd;
       transition: all ease-in-out 0.3s;
     }
   }

@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import classnames from "classnames";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
 // redux
-import { connect } from "react-redux";
-import { loginUser } from "../../actions/authActions";
+import { connect } from 'react-redux';
+import { loginUser } from '../../actions/authActions';
 class Login extends Component {
   constructor() {
     super();
     this.state = {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
       errors: {}
     };
   }
@@ -32,13 +32,13 @@ class Login extends Component {
 
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
+      this.props.history.push('/dashboard');
     }
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
+      this.props.history.push('/dashboard');
     }
     if (nextProps.errors) {
       this.setState({
@@ -64,8 +64,8 @@ class Login extends Component {
             type="email"
             value={this.state.email}
             onChange={this.onChange}
-            className={classnames("form-control", {
-              "is-invalid": errors.email
+            className={classnames('form-control', {
+              'is-invalid': errors.email
             })}
           />
           <p className="errors">{errors.email}</p>
@@ -75,8 +75,8 @@ class Login extends Component {
             type="password"
             value={this.state.password}
             onChange={this.onChange}
-            className={classnames("form-control", {
-              "is-invalid": errors.password
+            className={classnames('form-control', {
+              'is-invalid': errors.password
             })}
           />
           <p className="errors">{errors.password}</p>

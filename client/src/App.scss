@@ -6,38 +6,34 @@
 @import './sass/Dashboard';
 @import './sass/CreateProfile';
 .App {
-  background: #1c5bd6;
+  background: #14abbd;
   height: 100vh;
   overflow: auto;
 }
 
 body {
-  background: #1c5bd6;
-}
-
-.profiles {
-  background: #1c5bd6;
+  background: #14abbd;
 }
 
 .btn-profile-back {
   background: #fff;
-  color: #1c5bd6;
+  color: #14abbd;
 
   &:hover {
     border: 1px solid #fff;
-    background: #1c5bd6;
+    background: #14abbd;
     color: #fff;
   }
 }
 
 .btn-view {
-  background: #1c5bd6;
+  background: #14abbd;
   color: #fff;
 
   &:hover {
-    border: 1px solid #1c5bd6;
+    border: 1px solid #14abbd;
     background: #fff;
-    color: #1c5bd6;
+    color: #14abbd;
   }
 }
 
@@ -50,16 +46,16 @@ body {
 }
 
 .text-view {
-  color: #1c5bd6;
+  color: #14abbd;
 }
 
 .btn-feed {
   background: #fff;
-  color: #1c5bd6;
+  color: #14abbd;
 
   &:hover {
     border: 1px solid #ffff;
-    background: #1c5bd6;
+    background: #14abbd;
     color: #fff;
   }
 }

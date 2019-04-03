@@ -1,21 +1,21 @@
-import React, { Component } from "react";
-import classnames from "classnames";
-import PropTypes from "prop-types";
-import { withRouter } from "react-router-dom";
+import React, { Component } from 'react';
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 // Redux
-import { connect } from "react-redux";
-import { registerUser } from "../../actions/authActions";
+import { connect } from 'react-redux';
+import { registerUser } from '../../actions/authActions';
 //
 
 class Register extends Component {
   constructor() {
     super();
     this.state = {
-      name: "",
-      email: "",
-      password: "",
-      password2: "",
+      name: '',
+      email: '',
+      password: '',
+      password2: '',
       errors: {}
     };
   }
@@ -42,7 +42,7 @@ class Register extends Component {
 
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
+      this.props.history.push('/dashboard');
     }
   }
   // checks if errors props is updated, if so. If so, sets state of errors to props
@@ -58,7 +58,7 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="container register">
+      <div className="container register mt-4">
         <h1>Register</h1>
         <form noValidate onSubmit={this.onSubmit}>
           <input
@@ -66,8 +66,8 @@ class Register extends Component {
             name="name"
             value={this.state.name}
             onChange={this.onChange}
-            className={classnames("form-control", {
-              "is-invalid": errors.name
+            className={classnames('form-control', {
+              'is-invalid': errors.name
             })}
           />
           <p className="errors">{errors.name}</p>
@@ -77,8 +77,8 @@ class Register extends Component {
             type="email"
             value={this.state.email}
             onChange={this.onChange}
-            className={classnames("form-control", {
-              "is-invalid": errors.email
+            className={classnames('form-control', {
+              'is-invalid': errors.email
             })}
           />
           <p className="errors">{errors.email}</p>
@@ -88,8 +88,8 @@ class Register extends Component {
             type="password"
             value={this.state.password}
             onChange={this.onChange}
-            className={classnames("form-control", {
-              "is-invalid": errors.password
+            className={classnames('form-control', {
+              'is-invalid': errors.password
             })}
           />
           <p className="errors">{errors.password}</p>
@@ -99,8 +99,8 @@ class Register extends Component {
             type="password"
             value={this.state.password2}
             onChange={this.onChange}
-            className={classnames("form-control", {
-              "is-invalid": errors.password2
+            className={classnames('form-control', {
+              'is-invalid': errors.password2
             })}
           />
           <p className="errors">{errors.password2}</p>

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const NavBarContainer = styled.div`
   background: #fff;
@@ -25,7 +25,7 @@ export const Logo = styled.h1`
   padding: 0 1rem;
   font-size: 1.3rem;
   font-weight: 100;
-  font-family: "Oxygen", sans-serif;
+  font-family: 'Oxygen', sans-serif;
   line-height: 2.7rem;
 `;
 
@@ -41,7 +41,7 @@ export const RegisterHint = styled.p`
   font-weight: 100;
   line-height: 2.7rem;
   margin-right: 2rem;
-  font-family: "Oxygen", sans-serif;
+  font-family: 'Oxygen', sans-serif;
 `;
 
 export const RegisterLink = styled(Link)`
@@ -51,10 +51,10 @@ export const RegisterLink = styled(Link)`
   font-weight: 400;
   line-height: 2.7rem;
   margin-right: 2rem;
-  font-family: "Oxygen", sans-serif;
+  font-family: 'Oxygen', sans-serif;
   transition: all ease-in-out 0.3s;
   &:hover {
-    color: #1b5bd6;
+    color: #14abbd;
     font-weight: 600;
     text-decoration: none;
   }

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import isEmpty from '../../validation/is-empty';
+import { DefaultProfilePic, ProfilePicTitle } from '../../styles/UserPicStyles';
 class ProfileHeader extends Component {
   render() {
     const { profile } = this.props;
+    const colorWheel = ['#318BA3', '#14ABBD', '#FFAA00', '#FF6000', '#FF3800'];
+    const randomIndex = Math.floor(Math.random() * colorWheel.length);
 
     return (
       <div className="row">
@@ -10,14 +13,22 @@ class ProfileHeader extends Component {
           <div className="card card-body bg-light text-white mb-3">
             <div className="row">
               <div className="col-4 col-md-3 m-auto">
-                <img
-                  className="rounded-circle"
-                  src={profile.user.avatar}
-                  alt=""
-                  style={{
-                    marginLeft: '1rem'
-                  }}
-                />
+                {profile.user.avatar.includes('www.gravatar.com/avatar/') ? (
+                  <DefaultProfilePic bgcolor={colorWheel[randomIndex]}>
+                    <ProfilePicTitle>
+                      {profile.user.name.slice(0, 1)}
+                    </ProfilePicTitle>
+                  </DefaultProfilePic>
+                ) : (
+                  <img
+                    className="rounded-circle"
+                    src={profile.user.avatar}
+                    alt=""
+                    style={{
+                      marginLeft: '1rem'
+                    }}
+                  />
+                )}
               </div>
             </div>
             <div className="text-center">
