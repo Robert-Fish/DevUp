@@ -24,3 +24,23 @@
 .bg-now {
   background: rgb(28, 91, 214);
 }
+
+.btn-delete {
+  margin-right: auto;
+  margin-left: 0.4rem;
+  text-align: center;
+}
+
+// .profile-actions {
+//   // padding-left: 0;
+//   padding: 0;
+// }
+
+.btn-edit-profile {
+  margin-left: 0.4rem !important;
+
+  &:hover {
+    background: #14abbd;
+    color: #ffff;
+  }
+}

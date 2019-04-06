@@ -1,30 +1,30 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import classnames from "classnames";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
-import { withRouter } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
 
-import { createProfile } from "../../actions/profileActions";
+import { createProfile } from '../../actions/profileActions';
 
 class CreateProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
       displaySocialInputs: false,
-      handle: "", // Done
-      company: "", // Done
-      website: "", // Done
-      location: "", // Done
-      status: "", // Done
-      skills: "", // Done
-      githubusername: "", // Done
-      bio: "", // Done
-      twitter: "", // Done
-      facebook: "", // Done
-      linkedin: "", // Done
-      youtube: "", // Done
-      instagram: "", // Done
+      handle: '', // Done
+      company: '', // Done
+      website: '', // Done
+      location: '', // Done
+      status: '', // Done
+      skills: '', // Done
+      githubusername: '', // Done
+      bio: '', // Done
+      twitter: '', // Done
+      facebook: '', // Done
+      linkedin: '', // Done
+      youtube: '', // Done
+      instagram: '', // Done
       errors: {}
     };
   }
@@ -67,94 +67,6 @@ class CreateProfile extends Component {
     // let socialInput;
     const { errors } = this.state;
 
-    if (this.state.displaySocialInputs === true) {
-      // socialInput = (
-      //   <Fragment>
-      //     <div className="social-input">
-      //       <div className="item">
-      //         <i className="fab fa-facebook-square fa-2x" />
-      //       </div>
-      //       <div className="item">
-      //         <input
-      //           type="text"
-      //           placeholder="Facebook"
-      //           className={classnames("form-control", {
-      //             "is-invalid": errors.facebook
-      //           })}
-      //           onChange={this.onChange}
-      //           value={this.state.facebook}
-      //         />
-      //       </div>
-      //     </div>
-      //     <div className="social-input">
-      //       <div className="item">
-      //         <i className="fab fa-twitter-square fa-2x" />
-      //       </div>
-      //       <div className="item">
-      //         <input
-      //           type="text"
-      //           placeholder="Twitter"
-      //           className={classnames("form-control", {
-      //             "is-invalid": errors.twitter
-      //           })}
-      //           onChange={this.onChange}
-      //           value={this.state.twitter}
-      //         />
-      //       </div>
-      //     </div>
-      //     <div className="social-input">
-      //       <div className="item">
-      //         <i className="fab fa-linkedin fa-2x" />
-      //       </div>
-      //       <div className="item">
-      //         <input
-      //           type="text"
-      //           placeholder="LinkedIn"
-      //           className={classnames("form-control", {
-      //             "is-invalid": errors.linkedin
-      //           })}
-      //           onChange={this.onChange}
-      //           value={this.state.linkedin}
-      //         />
-      //       </div>
-      //     </div>
-      //     <div className="social-input">
-      //       <div className="item">
-      //         <i className="fab fa-youtube-square fa-2x" />
-      //       </div>
-      //       <div className="item">
-      //         <input
-      //           type="text"
-      //           placeholder="Youtube"
-      //           className={classnames("form-control", {
-      //             "is-invalid": errors.youtube
-      //           })}
-      //           onChange={this.onChange}
-      //           value={this.state.youtube}
-      //         />
-      //       </div>
-      //     </div>
-      //     <div className="social-input">
-      //       <div className="item">
-      //         <i className="fab fa-instagram fa-2x" />
-      //       </div>
-      //       <div className="item">
-      //         <input
-      //           type="text"
-      //           placeholder="Instagram"
-      //           className={classnames("form-control", {
-      //             "is-invalid": errors.instagram
-      //           })}
-      //           onChange={this.onChange}
-      //           value={this.state.instagram}
-      //         />
-      //       </div>
-      //     </div>
-      //   </Fragment>
-      // );
-    } else {
-      // socialInput = null;
-    }
     return (
       <div className="create-profile">
         <div className="row">
@@ -171,8 +83,8 @@ class CreateProfile extends Component {
                 type="text"
                 value={this.state.handle}
                 onChange={this.onChange}
-                className={classnames("form-control", {
-                  "is-invalid": errors.handle
+                className={classnames('form-control', {
+                  'is-invalid': errors.handle
                 })}
                 info="Handle"
               />
@@ -184,8 +96,8 @@ class CreateProfile extends Component {
                 type="text"
                 value={this.state.company}
                 onChange={this.onChange}
-                className={classnames("form-control", {
-                  "is-invalid": errors.company
+                className={classnames('form-control', {
+                  'is-invalid': errors.company
                 })}
               />
               <p className="errors">{errors.company}</p>
@@ -195,8 +107,8 @@ class CreateProfile extends Component {
                 type="text"
                 value={this.state.location}
                 onChange={this.onChange}
-                className={classnames("form-control", {
-                  "is-invalid": errors.location
+                className={classnames('form-control', {
+                  'is-invalid': errors.location
                 })}
               />
               <p className="errors">{errors.location}</p>
@@ -206,8 +118,8 @@ class CreateProfile extends Component {
                 type="text"
                 value={this.state.skills}
                 onChange={this.onChange}
-                className={classnames("form-control", {
-                  "is-invalid": errors.skills
+                className={classnames('form-control', {
+                  'is-invalid': errors.skills
                 })}
               />
               <p className="errors">{errors.skills}</p>
@@ -217,8 +129,8 @@ class CreateProfile extends Component {
                 type="text"
                 value={this.state.website}
                 onChange={this.onChange}
-                className={classnames("form-control", {
-                  "is-invalid": errors.website
+                className={classnames('form-control', {
+                  'is-invalid': errors.website
                 })}
               />
               <p className="errors">{errors.website}</p>
@@ -228,8 +140,8 @@ class CreateProfile extends Component {
                 type="text"
                 value={this.state.githubusername}
                 onChange={this.onChange}
-                className={classnames("form-control", {
-                  "is-invalid": errors.githubusername
+                className={classnames('form-control', {
+                  'is-invalid': errors.githubusername
                 })}
               />
               <p className="errors">{errors.githubusername}</p>
@@ -239,16 +151,16 @@ class CreateProfile extends Component {
                 type="text"
                 value={this.state.bio}
                 onChange={this.onChange}
-                className={classnames("form-control", {
-                  "is-invalid": errors.bio
+                className={classnames('form-control', {
+                  'is-invalid': errors.bio
                 })}
                 rows="4"
               />
               <p className="errors">{errors.bio}</p>
               <select
                 name="status"
-                className={classnames("form-control", {
-                  "is-invalid": errors.status
+                className={classnames('form-control', {
+                  'is-invalid': errors.status
                 })}
                 onChange={this.onChange}
                 value={this.state.status}

@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Spinner from "../common/Spinner";
-import { Link } from "react-router-dom";
-import ProfileActions from "./ProfileActions";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Spinner from '../common/Spinner';
+import { Link } from 'react-router-dom';
+import ProfileActions from './ProfileActions';
 // Redux imports
-import { connect } from "react-redux";
-import { getCurrentProfile, deleteAccount } from "../../actions/profileActions";
+import { connect } from 'react-redux';
+import { getCurrentProfile, deleteAccount } from '../../actions/profileActions';
 ////
 
 class Dashboard extends Component {
@@ -35,11 +35,14 @@ class Dashboard extends Component {
             </p>
             <ProfileActions />
             {/* TODO exp and education */}
-            <div className="col-md-12">
-              <button onClick={this.onDeleteClick} className="btn btn-danger">
-                Delete My Account
-              </button>
-            </div>
+            {/* <div className="col-md-12 col"> */}
+            <button
+              onClick={this.onDeleteClick}
+              className="btn btn-danger btn-delete"
+            >
+              Delete My Account
+            </button>
+            {/* </div> */}
             {/* <div className="col-md-6">
               <img
                 src={user.avatar}

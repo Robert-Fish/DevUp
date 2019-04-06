@@ -1,8 +1,10 @@
 .create-profile {
   background: #fff;
-  height: 95vh;
+  // height: 95vh;
   padding: 0.5rem;
   margin: 50px;
+  overflow: auto;
+  overflow-x: hidden;
 
   .is-invalid {
     border: 0.1rem solid red;
@@ -14,7 +16,7 @@
 
   .btn-md,
   .btn-primary .center-block {
-    background: #1c5bd6 !important;
+    background: #14abbd !important;
     border: none !important;
     padding: 0.5rem 1rem;
     margin-bottom: 2rem;

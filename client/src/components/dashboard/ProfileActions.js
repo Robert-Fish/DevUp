@@ -1,10 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProfileActions = () => {
   return (
-    <div className="col-md-12 btn-group mb-4" role="group">
-      <Link className="btn btn-light" to="/edit-profile">
+    <div
+      className="col-md-12 btn-group mb-4 profile-actions centre-block"
+      role="group"
+    >
+      <Link className="btn btn-light btn-edit-profile" to="/edit-profile">
         <i className="fas fa-user-circle text-info mr-1" />
         Edit Profile
       </Link>
