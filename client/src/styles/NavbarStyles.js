@@ -44,26 +44,17 @@ export const RegisterHint = styled.p`
   font-family: 'Oxygen', sans-serif;
 `;
 
-export const RegisterLink = styled(Link)`
+export const NavBarLink = styled(Link)`
   font-size: 0.8rem;
   color: black;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 2.7rem;
   margin-right: 2rem;
   font-family: 'Oxygen', sans-serif;
-  transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.2s;
   &:hover {
-    color: #14abbd;
-    font-weight: 600;
+    color: rgb(216, 23, 59);
     text-decoration: none;
   }
 `;
-
-export const LoginLink = styled(RegisterLink)``;
-
-export const ContributeLabel = styled(RegisterHint)``;
-
-export const LogoutLink = styled(RegisterLink)``;
-export const FeedLink = styled(RegisterLink)``;
-export const DashboardLink = styled(RegisterLink)``;

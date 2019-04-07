@@ -8,11 +8,7 @@ import {
   NavLeft,
   Logo,
   NavRight,
-  RegisterLink,
-  LoginLink,
-  FeedLink,
-  DashboardLink,
-  LogoutLink
+  NavBarLink
 } from '../../styles/NavbarStyles';
 class Navbar extends Component {
   onLogoutClick(e) {
@@ -27,15 +23,20 @@ class Navbar extends Component {
     const authLinks = (
       <Fragment>
         <NavLeft>
-          <Logo>DevUp</Logo>
+          <Logo>
+            <span style={{ color: 'rgb(216,23,59)', fontWeight: 'bold' }}>
+              Dev
+            </span>
+            Up
+          </Logo>
         </NavLeft>
         <NavRight>
-          <FeedLink to="/profiles">Profiles</FeedLink>
-          <FeedLink to="/feed">Feed</FeedLink>
-          <DashboardLink to="/dashboard">Dashboard</DashboardLink>
-          <LogoutLink to="#" onClick={() => this.props.logoutUser()}>
+          <NavBarLink to="/profiles">Profiles</NavBarLink>
+          <NavBarLink to="/feed">Feed</NavBarLink>
+          <NavBarLink to="/dashboard">Dashboard</NavBarLink>
+          <NavBarLink to="#" onClick={() => this.props.logoutUser()}>
             Logout
-          </LogoutLink>
+          </NavBarLink>
         </NavRight>
       </Fragment>
     );
@@ -43,11 +44,16 @@ class Navbar extends Component {
     const guestLinks = (
       <Fragment>
         <NavLeft>
-          <Logo>DevUp</Logo>
+          <Logo>
+            <span style={{ color: 'rgb(216,23,59)', fontWeight: 'bold' }}>
+              Dev
+            </span>
+            Up
+          </Logo>
         </NavLeft>
         <NavRight>
-          <RegisterLink to="/register">Register</RegisterLink>
-          <LoginLink to="/login">Got an Account with us?</LoginLink>
+          <NavBarLink to="/register">Register</NavBarLink>
+          <NavBarLink to="/login">Got an Account with us?</NavBarLink>
         </NavRight>
       </Fragment>
     );
