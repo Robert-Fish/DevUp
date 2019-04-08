@@ -5,7 +5,7 @@ Open source social network for developers
 ### Frameworks & Tools used:
 
 **Client** - React, Redux, Docker.  
-**API Gateway** - Node, Express, Docker.
+**Server** - Node, Express, Docker.
 
 ### Requirements:
 
