@@ -1,0 +1,22 @@
+version: "3.5"
+services:
+  client:
+    env_file: .env
+    build:
+      dockerfile: Dockerfile
+      context: ./client
+    ports:
+      - "127.0.0.1:${CLIENT_PORT}:3000"
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+  authentication_service:
+    env_file: .env
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - "127.0.0.1:${AUTHENTICATION_SERVICE_PORT}:5000"
+    volumes:
+      - /app/node_modules
+      - ./authentication_service:/app
