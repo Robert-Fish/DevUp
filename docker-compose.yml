@@ -14,7 +14,7 @@ services:
       dockerfile: Dockerfile
       context: .
     ports:
-      - "127.0.0.1:8000:5000"
+      - "127.0.0.1:8000:8000"
     volumes:
       - /app/node_modules
-      - ./:/app
+      - .:/app
