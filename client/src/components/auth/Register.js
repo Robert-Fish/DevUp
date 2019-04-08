@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import { LoginContainer } from '../../styles/LoginStyles';
 import { withRouter } from 'react-router-dom';
 
 // Redux
@@ -58,55 +59,64 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="container register mt-4">
-        <h1>Register</h1>
-        <form noValidate onSubmit={this.onSubmit}>
-          <input
-            placeholder="Name"
-            name="name"
-            value={this.state.name}
-            onChange={this.onChange}
-            className={classnames('form-control', {
-              'is-invalid': errors.name
-            })}
-          />
-          <p className="errors">{errors.name}</p>
-          <input
-            placeholder="Email"
-            name="email"
-            type="email"
-            value={this.state.email}
-            onChange={this.onChange}
-            className={classnames('form-control', {
-              'is-invalid': errors.email
-            })}
-          />
-          <p className="errors">{errors.email}</p>
-          <input
-            placeholder="Password"
-            name="password"
-            type="password"
-            value={this.state.password}
-            onChange={this.onChange}
-            className={classnames('form-control', {
-              'is-invalid': errors.password
-            })}
-          />
-          <p className="errors">{errors.password}</p>
-          <input
-            placeholder="Confirm Password"
-            name="password2"
-            type="password"
-            value={this.state.password2}
-            onChange={this.onChange}
-            className={classnames('form-control', {
-              'is-invalid': errors.password2
-            })}
-          />
-          <p className="errors">{errors.password2}</p>
-          <input type="submit" className="btn btn-info btn-block mt-4" />
-        </form>
-      </div>
+      <LoginContainer>
+        <img
+          src="https://images.pexels.com/photos/416942/pexels-photo-416942.jpeg?cs=srgb&dl=architecture-buildings-chicago-416942.jpg&fm=jpg"
+          alt=""
+          style={{
+            width: '40%'
+          }}
+        />
+        <div className="container login">
+          <h1>Register</h1>
+          <form noValidate onSubmit={this.onSubmit}>
+            <input
+              placeholder="Name"
+              name="name"
+              value={this.state.name}
+              onChange={this.onChange}
+              className={classnames('form-control', {
+                'is-invalid': errors.name
+              })}
+            />
+            <p className="errors">{errors.name}</p>
+            <input
+              placeholder="Email"
+              name="email"
+              type="email"
+              value={this.state.email}
+              onChange={this.onChange}
+              className={classnames('form-control', {
+                'is-invalid': errors.email
+              })}
+            />
+            <p className="errors">{errors.email}</p>
+            <input
+              placeholder="Password"
+              name="password"
+              type="password"
+              value={this.state.password}
+              onChange={this.onChange}
+              className={classnames('form-control', {
+                'is-invalid': errors.password
+              })}
+            />
+            <p className="errors">{errors.password}</p>
+            <input
+              placeholder="Confirm Password"
+              name="password2"
+              type="password"
+              value={this.state.password2}
+              onChange={this.onChange}
+              className={classnames('form-control', {
+                'is-invalid': errors.password2
+              })}
+            />
+            <p className="errors">{errors.password2}</p>
+            <input type="submit" className="btn btn-info btn-block mt-4" />
+          </form>
+        </div>
+      </LoginContainer>
     );
   }
 }

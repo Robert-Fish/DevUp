@@ -1,13 +1,12 @@
 @import './sass/Reset';
 @import './sass/Navbar';
 @import './sass/Landing';
-@import './sass/Register';
-@import './sass/Login';
+@import './sass/Auth';
 @import './sass/Dashboard';
 @import './sass/CreateProfile';
 .App {
-  background: #14abbd;
   height: 100vh;
+  background: #ffff;
   overflow: auto;
 }
 

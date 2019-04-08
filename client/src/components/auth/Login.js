@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import { LoginContainer } from '../../styles/LoginStyles';
 
 // redux
 import { connect } from 'react-redux';
@@ -51,38 +52,47 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="container login">
-        <h1>Login</h1>
-        <form
-          noValidate
-          onSubmit={this.onSubmit}
-          className="justify-content-center"
-        >
-          <input
-            placeholder="Email"
-            name="email"
-            type="email"
-            value={this.state.email}
-            onChange={this.onChange}
-            className={classnames('form-control', {
-              'is-invalid': errors.email
-            })}
-          />
-          <p className="errors">{errors.email}</p>
-          <input
-            placeholder="Password"
-            name="password"
-            type="password"
-            value={this.state.password}
-            onChange={this.onChange}
-            className={classnames('form-control', {
-              'is-invalid': errors.password
-            })}
-          />
-          <p className="errors">{errors.password}</p>
-          <input type="submit" className="btn btn-info mt-4" />
-        </form>
-      </div>
+      <LoginContainer>
+        <div className="container login">
+          <h1>Login</h1>
+          <form
+            noValidate
+            onSubmit={this.onSubmit}
+            className="justify-content-center"
+          >
+            <input
+              placeholder="Email"
+              name="email"
+              type="email"
+              value={this.state.email}
+              onChange={this.onChange}
+              className={classnames('form-control', {
+                'is-invalid': errors.email
+              })}
+            />
+            <p className="errors">{errors.email}</p>
+            <input
+              placeholder="Password"
+              name="password"
+              type="password"
+              value={this.state.password}
+              onChange={this.onChange}
+              className={classnames('form-control', {
+                'is-invalid': errors.password
+              })}
+            />
+            <p className="errors">{errors.password}</p>
+            <input type="submit" className="btn btn-info mt-4" />
+          </form>
+        </div>
+        <img
+          src="https://images.pexels.com/photos/1722183/pexels-photo-1722183.jpeg?cs=srgb&dl=architectural-design-architecture-birds-eye-view-1722183.jpg&fm=jpg"
+          alt=""
+          style={{
+            width: '50%'
+          }}
+        />
+      </LoginContainer>
     );
   }
 }
