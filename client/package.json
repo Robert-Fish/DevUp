@@ -6,6 +6,7 @@
     "add": "^2.0.6",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
+    "flow-bin": "^0.101.1",
     "jwt-decode": "^2.2.0",
     "moment": "^2.24.0",
     "node-sass": "^4.10.0",
@@ -26,7 +27,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "flow": "flow status"
   },
   "eslintConfig": {
     "extends": "react-app"

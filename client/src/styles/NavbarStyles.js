@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const NavBarContainer = styled.div`
-  background: #fff;
-  border-bottom: 1px solid #eaedf3;
+  background: #212121;
   display: flex;
+  box-shadow: 3px 3px 33px -4px rgba(0, 0, 0, 0.75);
   flex-direction: row;
   height: 2.7rem;
 `;
@@ -27,6 +27,7 @@ export const Logo = styled.h1`
   font-weight: 100;
   font-family: 'Oxygen', sans-serif;
   line-height: 2.7rem;
+  color: #fff;
 `;
 
 export const SearchBar = styled.input`
@@ -46,15 +47,18 @@ export const RegisterHint = styled.p`
 
 export const NavBarLink = styled(Link)`
   font-size: 0.8rem;
-  color: black;
+  color: #fff;
+  background: #d8153b;
+  padding: 0 .4rem;
   text-decoration: none;
   font-weight: 500;
+  border-radius: 8px;
   line-height: 2.7rem;
   margin-right: 2rem;
   font-family: 'Oxygen', sans-serif;
   transition: all ease-in-out 0.2s;
   &:hover {
-    color: rgb(216, 23, 59);
-    text-decoration: none;
+    color: #d8153b;
+    text-decoration: underline;
   }
 `;

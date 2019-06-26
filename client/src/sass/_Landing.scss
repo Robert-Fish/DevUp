@@ -1,5 +1,5 @@
 .landing {
-  background: #fff;
+  background: #212121;
   height: 80vh;
   width: 70vw;
   // margin: auto;
@@ -12,9 +12,9 @@
   margin: 5vh auto;
   box-shadow: 3px 3px 33px -4px rgba(0, 0, 0, 0.75);
 
-  h1 {
+  h1, p {
     text-align: center;
-
+    color: #fff;
     // line-height: 80vh;
   }
 
@@ -23,12 +23,12 @@
   .btn-block {
     margin-bottom: 2rem !important;
     margin-left: 0 !important;
-    border: 1px solid #14abbd;
-    background: #fff;
+    border: 1px solid #d8153b;
+    background: #d8153b;
     border-radius: 8px;
-
+    color: #fff;
     &:hover {
-      background: #14abbd;
+      background:transparent;
     }
   }
 }

@@ -25,7 +25,7 @@ class Landing extends Component {
           <Link to="/login" className="btn btn-light btn-lg btn-block">
             Login
           </Link>
-          <Link to="/register" className="btn btn-light btn-lg btn-block">
+          <Link to="/register" className="btn btn-light btn-lg btn-block btn-register">
             Register
           </Link>
         </div>

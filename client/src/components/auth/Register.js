@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+// @flow
+import * as React from 'react';
 import classnames from 'classnames';
-import PropTypes from 'prop-types';
 import { LoginContainer } from '../../styles/LoginStyles';
 import { withRouter } from 'react-router-dom';
 
@@ -9,16 +9,29 @@ import { connect } from 'react-redux';
 import { registerUser } from '../../actions/authActions';
 //
 
-class Register extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: '',
-      email: '',
-      password: '',
-      password2: '',
-      errors: {}
-    };
+type Props = {
+  registerUser: Function,
+  auth: Object,
+  errors: Object,
+  history: Object
+}
+
+type State = {
+  name: string,
+  email: string,
+  password: string,
+  password2: string,
+  errors: Object
+}
+
+
+class Register extends React.Component<Props, State> {
+  state = {
+    name: '',
+    email: '',
+    password: '',
+    password2: '',
+    errors: {}
   }
 
   // helper function to bind input value to state
@@ -120,12 +133,6 @@ class Register extends Component {
     );
   }
 }
-
-Register.propTypes = {
-  registerUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
-};
 
 const mapStateToProps = state => ({
   auth: state.auth,

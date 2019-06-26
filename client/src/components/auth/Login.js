@@ -1,20 +1,34 @@
-import React, { Component } from 'react';
+// @flow
+import * as React from 'react';
 import classnames from 'classnames';
-import PropTypes from 'prop-types';
 import { LoginContainer } from '../../styles/LoginStyles';
 
 // redux
 import { connect } from 'react-redux';
 import { loginUser } from '../../actions/authActions';
-class Login extends Component {
-  constructor() {
-    super();
-    this.state = {
-      email: '',
-      password: '',
-      errors: {}
-    };
-  }
+
+
+
+type Props = {
+  loginUser: Function,
+  auth: Object,
+  errors: Object,
+  history: Object
+}
+
+type State = {
+  email: string,
+  password: string,
+  errors: Object
+}
+
+class Login extends React.Component<Props, State> {
+
+  state = {
+    email: "",
+    password: "",
+    errors: {}
+  };
 
   onChange = e => {
     this.setState({
@@ -97,11 +111,7 @@ class Login extends Component {
   }
 }
 
-Login.propTypes = {
-  loginUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
-};
+
 
 const mapStateToProps = state => ({
   auth: state.auth,
