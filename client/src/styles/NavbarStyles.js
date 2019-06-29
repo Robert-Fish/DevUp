@@ -48,7 +48,6 @@ export const RegisterHint = styled.p`
 export const NavBarLink = styled(Link)`
   font-size: 0.8rem;
   color: #fff;
-  background: #d8153b;
   padding: 0 .4rem;
   text-decoration: none;
   font-weight: 500;
