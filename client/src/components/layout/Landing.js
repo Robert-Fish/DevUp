@@ -1,12 +1,17 @@
+// @flow
 import React, { Component } from 'react';
-
 import { Link } from 'react-router-dom';
 
 // Redux
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 
-class Landing extends Component {
+type Props ={
+  auth: Object,
+  history: Object
+}
+
+class Landing extends Component<Props> {
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
       this.props.history.push('/dashboard');
@@ -34,11 +39,8 @@ class Landing extends Component {
   }
 }
 
-Landing.propTypes = {
-  auth: PropTypes.object.isRequired
-};
-
 const mapStateToProps = state => ({
   auth: state.auth
 });
+
 export default connect(mapStateToProps)(Landing);

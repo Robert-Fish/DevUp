@@ -27,6 +27,7 @@ export const Logo = styled.h1`
   font-weight: 100;
   font-family: 'Oxygen', sans-serif;
   line-height: 2.7rem;
+  cursor: pointer;
   color: #fff;
 `;
 
@@ -58,6 +59,13 @@ export const NavBarLink = styled(Link)`
   transition: all ease-in-out 0.2s;
   &:hover {
     color: #d8153b;
-    text-decoration: underline;
+    text-decoration: none !important;
   }
 `;
+
+export const ProfilePicture = styled.img`
+width: 2rem;
+height: 2rem;
+margin-top: .4rem;
+border-radius: 50%;
+`

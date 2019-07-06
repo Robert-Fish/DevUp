@@ -4,10 +4,12 @@
 @import './sass/Auth';
 @import './sass/Dashboard';
 @import './sass/CreateProfile';
+
+
 .App {
   height: 100vh;
   background: #212121;
-  overflow: auto;
+  overflow: hidden;
 }
 
 body {

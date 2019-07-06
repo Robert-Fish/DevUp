@@ -11,17 +11,17 @@ class ProfileItem extends Component {
       <div className="card card-body bg-light mb-3">
         <div className="row">
           <div className="col-md-2 col-sm-12 text-center">
-            <img src={profile.user.avatar} alt="" className="rounded-circle" />
+            <img src={profile.user === null ? '' : profile.user.avatar} alt="" className="rounded-circle" />
           </div>
           <div
             className="col-lg-5 col-md-5 col-sm-12 text-center"
             style={{ marginLeft: '2rem' }}
           >
-            <h3 style={{ textTransform: 'capitalize' }}>{profile.user.name}</h3>
-            <p>
-              {profile.status}{' '}
+            <h3 style={{ textTransform: 'capitalize' }}>{profile.user === null ? '' : profile.user.name}</h3>
+            <p style={{textTransform: 'capitalize'}}>
+              {profile.status}
               {isEmpty(profile.company) ? null : (
-                <span>at {profile.company}</span>
+                <span> at {profile.company}</span>
               )}
             </p>
             <p>

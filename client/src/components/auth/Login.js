@@ -67,7 +67,7 @@ class Login extends React.Component<Props, State> {
 
     return (
       <LoginContainer>
-        <div className="container login">
+        <div className="login">
           <h1>Login</h1>
           <form
             noValidate
@@ -99,11 +99,13 @@ class Login extends React.Component<Props, State> {
             <input type="submit" className="btn btn-info mt-4" />
           </form>
         </div>
-        <img
-          src="https://images.pexels.com/photos/1722183/pexels-photo-1722183.jpeg?cs=srgb&dl=architectural-design-architecture-birds-eye-view-1722183.jpg&fm=jpg"
-          alt=""
+        <div
           style={{
-            width: '50%'
+            backgroundImage: 'url("https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?cs=srgb&dl=clouds-cloudy-cold-167699.jpg&fm=jpg")',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            width: '60%',
+            height: '100%',
           }}
         />
       </LoginContainer>
