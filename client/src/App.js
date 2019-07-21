@@ -1,36 +1,34 @@
-import React, { Component } from 'react';
-// Component imports
-import NavBar from './components/layout/Navbar';
-import Landing from './components/layout/Landing';
-import Login from './components/auth/Login';
-import Register from './components/auth/Register';
-import Dashboard from './components/dashboard/Dashboard';
-import PrivateRoute from './components/common/PrivateRoute';
-import CreateProfile from './components/createProfile/CreateProfile';
-/////
-
-import './App.scss';
+import React, { PureComponent } from "react";
 
 // Token helpers
-import jwt_decode from 'jwt-decode';
-import setAuthToken from './utils/setAuthToken';
+import jwt_decode from "jwt-decode";
+import { Provider } from "react-redux";
+import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+import setAuthToken from "./utils/setAuthToken";
 ///////////
+import NavBar from "./components/layout/Navbar";
+import Landing from "./components/layout/Landing";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
+import Dashboard from "./components/dashboard/Dashboard";
+import PrivateRoute from "./components/common/PrivateRoute";
+import CreateProfile from "./components/createProfile/CreateProfile";
+/////
 
-// Redux
-import { Provider } from 'react-redux';
-import store from './store';
-import { setCurrentUser, logoutUser } from './actions/authActions';
-import { clearCurrentProfile } from './actions/profileActions';
+import "./App.scss";
+
+import store from "./store";
+import { setCurrentUser, logoutUser } from "./actions/authActions";
+import { clearCurrentProfile } from "./actions/profileActions";
 ////
 
-// React router
-import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
-import EditProfile from './components/editProfile/EditProfile';
-import Profiles from './components/profiles/Profiles';
-import Profile from './components/profile/Profile';
-import NotFound from './components/not-found/NotFound';
-import Posts from './components/posts/Posts';
-import Post from './components/post/Post';
+import EditProfile from "./components/editProfile/EditProfile";
+import Profiles from "./components/profiles/Profiles";
+import Profile from "./components/profile/Profile";
+import NotFound from "./components/not-found/NotFound";
+import Posts from "./components/posts/Posts";
+import Post from "./components/post/Post";
+import MobileDetector from "./components/common/MobileDetector";
 
 ////
 
@@ -52,16 +50,17 @@ if (localStorage.jwtToken) {
     // Clear current profile
     store.dispatch(clearCurrentProfile());
     // Redirect to login
-    window.location.href = '/login';
+    window.location.href = "/login";
   }
 }
 
-class App extends Component {
+class App extends PureComponent {
   render() {
     return (
       <Provider store={store}>
         <Router>
           <div className="App">
+            <Route path="*" component={MobileDetector} />
             <NavBar />
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />

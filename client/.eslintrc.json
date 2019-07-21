@@ -1,0 +1,22 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "func-names": "off",
+    "no-process-exit": "off",
+    "object-shorthand": "off",
+    "class-methods-use-this": "off",
+    "react/jsx-filename-extension": "off",
+    "import/no-named-as-default-member": "off",
+    "import/no-named-as-default": "off",
+    "camelcase": "off",
+    "spaced-comment": "off"
+  },
+  "globals": {
+    "localStorage": true,
+    "window": true
+  }
+}

@@ -1,9 +1,9 @@
 // @flow
-import * as React from 'react';
-import {withRouter} from 'react-router-dom'
-import { connect } from 'react-redux';
-import { logoutUser } from '../../actions/authActions';
-import { clearCurrentProfile } from '../../actions/profileActions';
+import * as React from "react";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { logoutUser } from "../../actions/authActions";
+import { clearCurrentProfile } from "../../actions/profileActions";
 import {
   NavBarContainer,
   NavLeft,
@@ -11,7 +11,7 @@ import {
   NavRight,
   NavBarLink,
   ProfilePicture
-} from '../../styles/NavbarStyles';
+} from "../../styles/NavbarStyles";
 
 type Props = {
   logoutUser: Function,
@@ -19,11 +19,9 @@ type Props = {
   auth: Object,
   history: Object,
   profile: Object
-}
-
+};
 
 class Navbar extends React.Component<Props> {
- 
   onLogoutClick(e) {
     e.preventDefault();
     this.props.clearCurrentProfile();
@@ -32,17 +30,11 @@ class Navbar extends React.Component<Props> {
 
   render() {
     const { isAuthenticated, user } = this.props.auth;
-
-    const { profile } = this.props.profile;
-
-    console.log(profile)
-
-
     const authLinks = (
       <React.Fragment>
         <NavLeft>
-          <Logo onClick={() => this.props.history.push('/') }>
-            <span style={{ color: 'rgb(216,23,59)', fontWeight: 'bold' }}>
+          <Logo onClick={() => this.props.history.push("/")}>
+            <span style={{ color: "rgb(216,23,59)", fontWeight: "bold" }}>
               Dev
             </span>
             Up
@@ -53,7 +45,7 @@ class Navbar extends React.Component<Props> {
           {/* <NavBarLink to={profile === undefined ? '' : `/profile/${profile.handle}`}>My Profile</NavBarLink>x  */}
           <NavBarLink to="/feed">Feed</NavBarLink>
           <NavBarLink to="/dashboard">Dashboard</NavBarLink>
-          <ProfilePicture src={user.avatar} alt="profile picture"></ProfilePicture>
+          <ProfilePicture src={user.avatar} alt="profile picture" />
           <NavBarLink to="#" onClick={() => this.props.logoutUser()}>
             Logout
           </NavBarLink>
@@ -65,7 +57,7 @@ class Navbar extends React.Component<Props> {
       <React.Fragment>
         <NavLeft>
           <Logo>
-            <span style={{ color: 'rgb(216,23,59)', fontWeight: 'bold' }}>
+            <span style={{ color: "rgb(216,23,59)", fontWeight: "bold" }}>
               Dev
             </span>
             Up
