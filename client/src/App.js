@@ -1,12 +1,13 @@
 import React, { PureComponent } from "react";
 
+import Theme from "./Theme";
 // Token helpers
 import jwt_decode from "jwt-decode";
 import { Provider } from "react-redux";
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import setAuthToken from "./utils/setAuthToken";
 ///////////
-import NavBar from "./components/layout/Navbar";
+import NavBar from "./components/layout/NavBar";
 import Landing from "./components/layout/Landing";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
@@ -61,7 +62,9 @@ class App extends PureComponent {
         <Router>
           <div className="App">
             <Route path="*" component={MobileDetector} />
-            <NavBar />
+            <Theme>
+              <NavBar />
+            </Theme>
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
