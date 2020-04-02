@@ -1,14 +1,17 @@
-@import './sass/Reset';
-@import './sass/Navbar';
-@import './sass/Landing';
-@import './sass/Auth';
-@import './sass/Dashboard';
-@import './sass/CreateProfile';
+@import "./sass/Reset";
+@import "./sass/Navbar";
+@import "./sass/Landing";
+@import "./sass/Auth";
+@import "./sass/Dashboard";
+@import "./sass/CreateProfile";
 
+body {
+  font-family: "Lato", sans-serif;
+}
 
 .App {
   height: 100vh;
-  background: #212121;
+  background: #fafafa;
   overflow: hidden;
 }
 
@@ -29,12 +32,12 @@ body {
 
 .btn-view {
   background: #fff;
-  color: #D8153B;
-  border-color: #D8153B;
+  color: #d8153b;
+  border-color: #d8153b;
 
   &:hover {
-    border: 1px solid #D8153B;
-    background: #D8153B;
+    border: 1px solid #d8153b;
+    background: #d8153b;
     color: #fff;
   }
 }
@@ -48,13 +51,13 @@ body {
 }
 
 .text-view {
-  color: #D8153B;
+  color: #d8153b;
 }
 
 .btn-feed {
   background: #fff;
   color: #d8153b;
-  border-color: #D8153B;
+  border-color: #d8153b;
 
   &:hover {
     border: 1px solid #ffff;
@@ -68,10 +71,8 @@ body {
   height: 100vh;
 }
 
-.btn-light{
-  
-
-  &:hover{
-    background: #D8153B;
+.btn-light {
+  &:hover {
+    background: #d8153b;
   }
 }
